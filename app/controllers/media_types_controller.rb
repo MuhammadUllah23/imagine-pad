@@ -1,0 +1,2 @@
+class MediaTypesController < ApplicationController
+end
