@@ -10,7 +10,7 @@ class SessionsController < ApplicationController
         @user = User.find_by(email: params[:user][:email]) || User.find_by(username: params[:user][:username])
         if @user && @user.authenticate(params[:user][:password])
             session[:id] = @user.id
-            redirect_to user_path(@user)
+            render :welcome
         else
             redirect_to login_path
         end
@@ -22,16 +22,13 @@ class SessionsController < ApplicationController
     end
 
     def omniauth
-        @user = User.find_or_create_by(uid: auth['uid']) do |u|
-            u.name = auth['info']['name']
+        @user = User.find_or_create_by(uid: auth['uid'], provider: auth['provider']) do |u|
+            u.username = auth['info']['name']
             u.email = auth['info']['email']
+            u.password = SecureRandom.hex(15)
+            
         end
-
-        if @user.valid?
-            session[:id] = @user.id 
-            redirect_to root_path
-        else
-        end
+        render :welcome 
     end
 
     private
