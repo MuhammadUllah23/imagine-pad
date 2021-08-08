@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
   root to: 'sessions#welcome'
-  
+
   resources :concepts
   resources :media_types
   resources :genres
@@ -9,6 +9,7 @@ Rails.application.routes.draw do
   get '/signup', to: 'users#new'
   post '/signup', to: 'users#create'
 
+  get '/auth/facebook/callback' => 'sessions#omniauth' 
   get '/login', to: 'sessions#new'
   post '/login', to: 'sessions#create'
   delete '/logout', to: 'sessions#destroy'
