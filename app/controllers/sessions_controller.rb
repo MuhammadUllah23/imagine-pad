@@ -2,7 +2,7 @@ class SessionsController < ApplicationController
 
     def welcome
     end
-    
+
     def new
     end
 
@@ -16,5 +16,8 @@ class SessionsController < ApplicationController
         end
     end
 
-
+    def destroy
+        session.delete(:id)
+        redirect_to root_path
+    end
 end

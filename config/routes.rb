@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  root to: 'sessions#welcome'
+  
   resources :concepts
   resources :media_types
   resources :genres
