@@ -1,9 +1,11 @@
 Rails.application.routes.draw do
   root to: 'sessions#welcome'
 
-  resources :concepts
+  resources :concepts, only: [:index, :new, :create]
   resources :media_types
-  resources :genres
+  resources :genres do
+    resources :concepts, shallow: true
+  end
 
   resources :users
   get '/signup', to: 'users#new'
