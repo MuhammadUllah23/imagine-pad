@@ -1,4 +1,5 @@
 class ConceptsController < ApplicationController
+    before_action :redirect_if_not_logged_in?
 
     def index
         @concepts = Concept.all
@@ -10,6 +11,7 @@ class ConceptsController < ApplicationController
 
     def create
         @concept = Concept.new(concept_params)
+        byebug
         if @concept.save
             redirect_to concept_path(@concept)
         else
@@ -24,6 +26,6 @@ class ConceptsController < ApplicationController
     private
 
     def concept_params
-        params.require(:concept).permit(:title, :content, :media_type_id, :genre_id)
+        params.require(:concept).permit(:title, :content, :user_id, :media_type_id, :genre_id)
     end
 end

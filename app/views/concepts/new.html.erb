@@ -2,6 +2,7 @@
 <h1>Write Your Concept</h1>
 
 <%= form_for(@concept) do |f|%>
+<%= f.hidden_field :user_id, value: session[:user_id]%>
     <%= f.label :title %> <br>
     <%= f.text_field :title %>
     <br><br>
@@ -9,6 +10,8 @@
     <%= f.text_area :content %>
     <br><br>
     <%= f.collection_select :genre_id, Genre.all, :id, :name %>
+    <br><br>
+     <%= f.collection_select :media_type_id, MediaType.all, :id, :name %>
     <br><br>
      <%= f.submit %>
 

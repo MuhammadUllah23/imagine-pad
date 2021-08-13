@@ -1,6 +1,9 @@
 class SessionsController < ApplicationController 
 
     def welcome
+        if session[:user_id]
+            @user = User.find_by_id(session[:user_id])
+        end
     end
 
     def new
@@ -17,7 +20,7 @@ class SessionsController < ApplicationController
     end
 
     def destroy
-        session.delete(:id)
+        session.delete(:user_id)
         redirect_to root_path
     end
 
@@ -29,7 +32,7 @@ class SessionsController < ApplicationController
           end
          
       
-          session[:id] = user.id
+          session[:user_id] = user.id
       #byebug
           redirect_to user_path(user)
     end

@@ -1,6 +1,6 @@
 <h1>Imagine Pad</h1>
 
-<% if session[:id] %>
+<% if session[:user_id] %>
   <h1><%= @user.username %></h1>
   <h2>Email: <%= @user.email %></h2> 
   <br><br>
