@@ -11,7 +11,7 @@ class ConceptsController < ApplicationController
 
     def create
         @concept = Concept.new(concept_params)
-        byebug
+        #byebug
         if @concept.save
             redirect_to concept_path(@concept)
         else
