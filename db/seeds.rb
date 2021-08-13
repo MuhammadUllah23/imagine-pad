@@ -20,3 +20,19 @@ genres = Genre.create([
     { name: 'Dystopian' },
     { name: 'Magical Realism' },
     { name: 'Realist Literature' },])
+
+
+medias = MediaType.create([
+    { name: 'Television' },
+    { name: 'Radio' },
+    { name: 'Cinema' },
+    { name: 'Games' },
+    { name: 'Magazine' },
+    { name: 'Blogs' },
+    { name: 'Music' },
+    { name: 'Digital Communities' },
+    { name: 'Podcast' },
+    { name: 'Books' },
+    { name: 'Graphic Design' },
+    { name: 'Audio' }
+])
