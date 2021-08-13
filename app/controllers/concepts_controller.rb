@@ -21,4 +21,9 @@ class ConceptsController < ApplicationController
         @concept = Concept.find_by_id(params[:id])
     end
     
+    private
+
+    def concept_params
+        params.require(:concept).permit(:title, :context, :media_type_id, :genre_id)
+    end
 end
