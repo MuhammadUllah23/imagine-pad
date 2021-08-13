@@ -16,5 +16,9 @@ class ConceptsController < ApplicationController
             render :new
         end
     end
+
+    def show
+        @concept = Concept.find_by_id(params[:id])
+    end
     
 end
