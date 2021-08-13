@@ -1,13 +1,2 @@
 <h1>Imagine Pad</h1>
 
-<% if logged_in? %>
-  <h1><%= @user.username %></h1>
-  <h2>Email: <%= @user.email %></h2> 
-  <br><br>
-  <%= button_to "logout", '/logout'%>
-<% else %>
-  <%= link_to 'Sign Up', signup_path%>
-  <%= link_to 'Log In', login_path%>
-  <%= link_to('Log in with Facebook', '/auth/facebook', method: :post) %>
-   
-<% end %> 
