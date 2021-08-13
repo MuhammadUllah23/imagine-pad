@@ -5,3 +5,18 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+genres = Genre.create([
+    { name: 'Literary Fiction' }, 
+    { name: 'Mystery' },
+    { name: 'Thriller' },
+    { name: 'Horror' },
+    { name: 'Historical' },
+    { name: 'Romance' },
+    { name: 'Western' },
+    { name: 'Bildungsroman' },
+    { name: 'Speculative Fiction' },
+    { name: 'Science Fiction' },
+    { name: 'Fantasy' },
+    { name: 'Dystopian' },
+    { name: 'Magical Realism' },
+    { name: 'Realist Literature' },])
