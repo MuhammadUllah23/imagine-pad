@@ -1,0 +1,13 @@
+
+<h1>Write Your Concept</h1>
+
+<%= form_for(@concept) do |f|%>
+    <%= f.label :title %> <br>
+    <%= f.text_field :title %>
+    <br><br>
+    <%= f.label :content %> <br>
+    <%= f.text_area :content %>
+    <br><br>
+     <%= f.submit %>
+
+<% end %>
