@@ -2,7 +2,12 @@ class ConceptsController < ApplicationController
     before_action :redirect_if_not_logged_in?
 
     def index
-        @concepts = Concept.all
+        #byebug
+        if params[:genre_id] && @genre = Genre.find_by_id(params[:genre_id])
+            @concepts = @genre.concepts
+        else
+            @concepts = Concept.all
+        end
     end
 
     def new
