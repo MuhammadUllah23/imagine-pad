@@ -10,5 +10,5 @@ class Concept < ApplicationRecord
         end
     end
 
-    scope :order_by_title, -> {order(title: :desc)}
+    scope :order_by_title, -> {order(title: :asc)}
 end
