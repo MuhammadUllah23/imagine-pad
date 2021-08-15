@@ -3,7 +3,7 @@
 <%= render partial: "layouts/error", locals: { object: @genre } %>
 
 <%= form_for(@genre) do |f| %>
-    <%= f.label :name %>
-    <%= f.text_field :name %><br>
+    <%= render partial: "form", locals: { f: f}%>
+
     <%= f.submit %>
 <% end %>

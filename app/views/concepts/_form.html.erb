@@ -19,8 +19,7 @@
         <br><br>
         <h3>Or Create A Genre:</h3>
         <%= f.fields_for :genre do |g| %>
-            <%= g.label :name %>
-            <%= g.text_field :name %>
+            <%= render partial: "genres/form", locals: { f: g}%>
         <% end %>
     <% end %>
     <br><br>
