@@ -1,7 +1,8 @@
 <h2>All Genres</h2>
 <br>
 <% @genres.each do |genre| %>
-<h4><%= genre.name %></h4>
-<p><%= genre.count %> Concepts</p>
+<h3><%= genre.name %></h3>
+<p><%= genre.concepts.length %> Concepts</p>
 <%= link_to 'View Genre', genre_path(genre) %>
+<br><br>
 <% end %>

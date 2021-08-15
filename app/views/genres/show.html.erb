@@ -1,0 +1,10 @@
+<h2><%= @genre.name %> Genre</h2>
+<% if logged_in?%> 
+<%= link_to 'Create Concept for this Genre', new_genre_concept_path(@genre)%>
+<% end %>
+<br><br>
+<% @genre.concepts.each do |concept|%>
+<h3><%= concept.title %></h3>
+<p>By <%= concept.user[:username]%></p>
+<%= link_to 'View Concept', concept_path(concept)%>
+<% end %>
