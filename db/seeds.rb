@@ -36,3 +36,11 @@ medias = MediaType.create([
     { name: 'Graphic Design' },
     { name: 'Audio' }
 ])
+
+users = User.create([
+    { email: "cinnamon@gmail.com", password:"1234", username:"CinnamonJack2" },
+    { email: "bookert@gmail.com", password:"1234", username:"ILoveBooks" },
+    { email: "bookKeeper@yahoo.com", password:"1234", username:"BookKeeper" },
+    { email: "tinylibrarian@gmail.com", password:"1234", username:"TinyLibrarian" },
+    { email: "pagesorcerer45@gamil.com", password:"1234", username:"PageSorcerer45" }
+])
