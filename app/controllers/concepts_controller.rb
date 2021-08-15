@@ -32,6 +32,6 @@ class ConceptsController < ApplicationController
     private
 
     def concept_params
-        params.require(:concept).permit(:title, :content, :media_type_id, :genre_id)
+        params.require(:concept).permit(:title, :content, :media_type_id, :genre_id, genre_attributes: [:name])
     end
 end
