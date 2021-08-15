@@ -5,6 +5,6 @@
 <% @concepts.each do |concept|%>
 <h4><%= concept.title%></h4>
 <p>Genre: <%= concept.genre[:name]%></p>
-<p>Genre: <%= concept.media_type[:name]%></p>
+<p>Media Type: <%= concept.media_type[:name]%></p>
 <%= link_to 'View Concept', concept_path(concept)%>
 <% end %>

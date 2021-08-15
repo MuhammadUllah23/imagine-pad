@@ -6,7 +6,7 @@ class ConceptsController < ApplicationController
         if params[:genre_id] && @genre = Genre.find_by_id(params[:genre_id])
             @concepts = @genre.concepts
         else
-            @concepts = Concept.all
+            @concepts = Concept.order_by_title
         end
     end
 

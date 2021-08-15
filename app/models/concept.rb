@@ -9,4 +9,6 @@ class Concept < ApplicationRecord
             self.genre = Genre.find_or_create_by(hash_of_attributes)
         end
     end
+
+    scope :order_by_title, -> {order(title: :desc)}
 end
