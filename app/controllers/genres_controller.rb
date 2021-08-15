@@ -1,4 +1,9 @@
 class GenresController < ApplicationController
+
+    def index
+        @genres = Genre.order_by_name
+    end
+
     def new
         @genre = Genre.new
     end
