@@ -1,5 +1,5 @@
 class ConceptsController < ApplicationController
-    before_action :redirect_if_not_logged_in?
+    before_action :redirect_if_not_logged_in?, only: [:new, :create, :edit, :update]
 
     def index
         #byebug
@@ -11,7 +11,14 @@ class ConceptsController < ApplicationController
     end
 
     def new
-        @concept = Concept.new
+        if params[:genre_id] && @genre = Genre.find_by_id(params[:genre_id])
+            @concept = @genre.concepts.build
+        else
+            @concept = Concept.new
+            @concept.build_genre
+
+        end
+        
     end
 
     def create
@@ -29,8 +36,7 @@ class ConceptsController < ApplicationController
         @concept = Concept.find_by_id(params[:id])
     end
 
-    def update 
-       
+    def update  
         @concept.update(concept_params)
         if @concept.valid?
             redirect_to concept_path(@concept)
