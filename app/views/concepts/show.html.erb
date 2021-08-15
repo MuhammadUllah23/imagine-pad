@@ -1,2 +1,6 @@
 <h1><%= @concept.title%></h1><br><br>
 <%= @concept.content%>
+
+<%if current_user.id == @concept.user_id%>
+<%= link_to 'Edit Concept', edit_concept_path(@concept)%>
+<% end %>

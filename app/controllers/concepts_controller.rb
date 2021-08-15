@@ -37,6 +37,7 @@ class ConceptsController < ApplicationController
     end
 
     def update  
+        @concept = Concept.find_by_id(params[:id])
         @concept.update(concept_params)
         if @concept.valid?
             redirect_to concept_path(@concept)
