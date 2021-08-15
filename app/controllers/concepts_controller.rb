@@ -25,6 +25,20 @@ class ConceptsController < ApplicationController
         end
     end
 
+    def edit
+        @concept = Concept.find_by_id(params[:id])
+    end
+
+    def update 
+       
+        @concept.update(concept_params)
+        if @concept.valid?
+            redirect_to concept_path(@concept)
+        else
+            render :edit
+        end
+    end
+
     def show
         @concept = Concept.find_by_id(params[:id])
     end
