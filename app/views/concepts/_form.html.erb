@@ -1,0 +1,17 @@
+<%= render partial: "layouts/error", locals: { object: @concept}%>
+
+<%= form_for(@concept) do |f|%>
+
+    <%= f.label :title %> <br>
+    <%= f.text_field :title %>
+    <br><br>
+    <%= f.label :content %> <br>
+    <%= f.text_area :content %>
+    <br><br>
+    <%= f.collection_select :media_type_id, MediaType.all, :id, :name, {:include_blank => 'Choose Media Type'} %>
+    <br><br>
+    <%= f.collection_select :genre_id, Genre.all, :id, :name, {:include_blank => 'Choose Genre'} %>
+    <br><br>
+     <%= f.submit %>
+
+<% end %>     
