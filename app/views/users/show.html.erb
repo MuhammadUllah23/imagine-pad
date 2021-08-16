@@ -1,1 +1,7 @@
 <h1><%= @user.username %></h1>
+
+<% @user.concepts.each do |concept|%>
+<h3><%= concept.title %></h3>
+<p>By <%= concept.genre[:name]%></p>
+<%= link_to 'View Concept', concept_path(concept)%>
+<% end %>
