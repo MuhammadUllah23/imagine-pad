@@ -15,7 +15,7 @@ class SessionsController < ApplicationController
             session[:user_id] = @user.id
             render :welcome
         else
-            redirect_to login_path
+            render :new
         end
     end
 

@@ -1,7 +1,9 @@
 <h1>Login</h1>
+
 <% if @user%>
 <%= render partial: "layouts/error", locals: { object: @user}%>
-<%end %>
+<% end %>
+
 <%= form_for(:user, url: login_path) do |f|%>
 <p>Please login with your email or username</p> <br>
 <%= f.label :email %>

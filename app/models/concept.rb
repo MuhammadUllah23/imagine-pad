@@ -5,7 +5,7 @@ class Concept < ApplicationRecord
     accepts_nested_attributes_for :genre #brand_attributes=
 
     validates :title, presence: true
-    validates :title, presence: true
+    validates :content, presence: true
 
     def genre_attributes=(hash_of_attributes)
         if !hash_of_attributes["name"].blank? 
