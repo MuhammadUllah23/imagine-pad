@@ -34,7 +34,7 @@ class SessionsController < ApplicationController
       
           session[:user_id] = user.id
       #byebug
-          redirect_to user_path(user)
+      render :welcome
     end
 
     private
