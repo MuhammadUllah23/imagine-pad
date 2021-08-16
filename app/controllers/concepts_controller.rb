@@ -51,7 +51,7 @@ class ConceptsController < ApplicationController
 
     def destroy 
         @concept.destroy 
-        redirect_to shoes_path
+        redirect_to concepts_path
     end
     
     private

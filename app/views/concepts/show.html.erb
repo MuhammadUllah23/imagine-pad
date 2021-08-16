@@ -3,4 +3,5 @@
 <br><br>
 <%if current_user.id == @concept.user_id%>
 <%= link_to 'Edit Concept', edit_concept_path(@concept)%>
+<%= link_to 'Delete Concept', concept_path(@concept), method: 'delete'%>
 <% end %>
