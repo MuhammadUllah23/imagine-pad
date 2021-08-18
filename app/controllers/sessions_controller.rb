@@ -1,6 +1,7 @@
 class SessionsController < ApplicationController 
 
     def welcome
+        #byebug
         if session[:user_id]
             @user = User.find_by_id(session[:user_id])
         end
