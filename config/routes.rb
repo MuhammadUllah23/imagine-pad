@@ -2,7 +2,7 @@ Rails.application.routes.draw do
   root to: 'sessions#welcome'
 
   resources :concepts, only: [:index, :new, :create]
-  resources :media_types
+
   resources :genres do
     resources :concepts, shallow: true
   end
